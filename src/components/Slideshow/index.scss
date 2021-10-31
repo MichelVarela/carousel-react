@@ -1,0 +1,74 @@
+.contenedor-principal {
+    position: relative;
+
+    .contenedor-slideshow {
+        display: flex;
+
+        .slide {
+            min-width: 100%; /* definimos que el ancho minimo sea del 100 para que solo se vea una img presente en pantalla */
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+            /* z-index: 9; */
+            max-height: 500px; /* para que los slides tengan todos el mismo tamaño en caso de que las images sean de tamaños diferentes */
+            position: relative;
+
+            a {
+
+                img {
+                    width: 100%;
+                    vertical-align: top; /* acomoda un espaciado por defecto */
+                }
+            }
+
+            .text-slide {
+                background: rgba(0, 0, 0, .5); /* porque no puedo modificar el color ? */
+                color: #fff;
+                width: 100%;
+                padding: 10px 60px;
+                text-align: center;
+            }
+        }
+    }
+
+    .controles {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        pointer-events: none; /* permite definir a que elemento le damos prioridad sobre el pointer */
+        
+        button {
+            border: none;
+            border-radius: 2rem;
+            background-color: transparent;
+            cursor: pointer;
+            outline: none;
+            pointer-events: all; /* al quitar el pointer-event del contenedor .controles debemos agregar pointer event al button para que funcionen */
+            width: 50px;
+            height: 50px;
+            transition: all .3s ease-in-out;
+
+            &:hover > span {
+                color: rgba(0, 0, 0, .5);
+                transition: all .3s ease-in-out;
+            }
+
+            span {
+                font-size: 2rem;
+                color: rgba(0, 0, 0, .8);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .text-slide {
+        background: rgba(0, 0, 0, .5);
+        position: absolute;
+        bottom: 0;
+    }
+}

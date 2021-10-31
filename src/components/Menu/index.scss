@@ -1,0 +1,56 @@
+.menu {
+    /* position: relative; */
+    
+    .icon-menu {
+        padding: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: ease-in-out .3s;
+        }
+
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+
+        .icon-menu {
+            display: none;
+        }
+
+        nav {
+            display: block;
+
+            ul {
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+
+                li {
+                    padding: 0.8rem 1rem;
+                    border-radius: 2rem;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, .2);
+                    }
+
+                    &:hover > a {
+                        color: var(--color-verdeagua);
+                    }
+
+                    a {
+                        color: var(--color-negro);
+                    }
+                }
+            }
+        }
+    }
+}
