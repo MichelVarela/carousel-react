@@ -1,0 +1,24 @@
+.slide {
+    min-width: 100%; /* definimos que el ancho minimo sea del 100 para que solo se vea una img presente en pantalla */
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    /* z-index: 9; */
+    max-height: 500px; /* para que los slides tengan todos el mismo tamaño en caso de que las images sean de tamaños diferentes */
+    position: relative;
+
+    a {
+
+        img {
+            width: 100%;
+            vertical-align: top; /* acomoda un espaciado por defecto */
+        }
+    }
+
+    .text-slide {
+        background: rgba(0, 0, 0, .5); /* porque no puedo modificar el color ? */
+        color: #fff;
+        width: 100%;
+        padding: 10px 60px;
+        text-align: center;
+    }
+}

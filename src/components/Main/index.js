@@ -8,8 +8,6 @@ const Main = () => {
         <main>
             <h3>Productos destacados</h3>
             <Slideshow />
-            <h3>Productos nuevos</h3>
-            <Slideshow />
         </main>
      );
 }

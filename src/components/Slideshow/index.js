@@ -2,6 +2,31 @@ import react, {useRef, useEffect} from 'react';
 import Icon from '@mui/material/Icon';
 import './index.scss';
 
+import Slide from '../layout/Slide';
+
+const images = [
+    {
+        id: 1,
+        name: '1.jpg',
+        description: '15% off Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+    {
+        id: 2,
+        name: '2.jpg',
+        description: '30% off Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+    {
+        id: 3,
+        name: '3.jpg',
+        description: '55% off Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+    {
+        id: 4,
+        name: '4.jpg',
+        description: '60% off Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    }
+];
+
 const Slideshow = () => {
 
     const slideshow = useRef(null); // Hook useRef siempre va dentro del componente, nos permite acceder a las referencias que determinemos y establecerlas
@@ -73,38 +98,7 @@ const Slideshow = () => {
     return ( 
         <div className='contenedor-principal'>
             <div className="contenedor-slideshow" ref={slideshow}>
-                <div className='slide'>
-                    <a href="#">
-                        <img src="/images/slideshow/1.jpg" alt="slideshow" />
-                    </a>
-                    <div className='text-slide'>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad!</p>
-                    </div>
-                </div>
-                <div className='slide'>
-                    <a href="#">
-                        <img src="/images/slideshow/2.jpg" alt="slideshow" />
-                    </a>
-                    <div className='text-slide'>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad!</p>
-                    </div>
-                </div>
-                <div className='slide'>
-                    <a href="#">
-                        <img src="/images/slideshow/3.jpg" alt="slideshow" />
-                    </a>
-                    <div className='text-slide'>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad!</p>
-                    </div>
-                </div>
-                <div className='slide'>
-                    <a href="#">
-                        <img src="/images/slideshow/4.jpg" alt="slideshow" />
-                    </a>
-                    <div className='text-slide'>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad!</p>
-                    </div>
-                </div>
+                {images.map(el => <Slide name={el.name} id={el.id} description={el.description}/>)}
             </div>
             <div className='controles'>
                 <button onClick={prev}><Icon>chevron_left</Icon></button>
